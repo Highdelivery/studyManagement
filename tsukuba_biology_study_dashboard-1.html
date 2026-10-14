@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172554">
+<title>筑波大 生物学類｜学習ダッシュボード</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#172033;--muted:#64748b;--line:#e2e8f0;--navy:#172554;--blue:#3b82f6;--green:#15803d;--orange:#c2410c;--purple:#6d28d9;--shadow:0 8px 26px rgba(15,23,42,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.65}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.hero{background:linear-gradient(135deg,#172554,#1e40af 68%,#2563eb);color:white;padding:28px 18px 24px}.hero-inner,.layout{max-width:1120px;margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8}.hero h1{font-size:clamp(1.55rem,4vw,2.5rem);line-height:1.25;margin:.45rem 0}.hero p{margin:.55rem 0 0;color:#dbeafe;max-width:760px}.hero-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:white;color:var(--ink);font-weight:650}.btn.primary{background:#dbeafe;color:#172554;border-color:#bfdbfe}.btn.ghost{background:transparent;color:white;border-color:#93c5fd}.layout{padding:18px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px}.sidebar{align-self:start;position:sticky;top:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}.sidebar a{display:block;text-decoration:none;color:#334155;padding:9px 10px;border-radius:9px;font-size:.92rem}.sidebar a:hover,.sidebar a.active{background:#eff6ff;color:#1d4ed8;font-weight:700}.content{min-width:0}.section{scroll-margin-top:14px;margin-bottom:20px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:10px}.section h2{font-size:1.3rem;margin:0}.section-head p{color:var(--muted);margin:3px 0 0;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:var(--shadow);min-width:0}.card h3{font-size:1.02rem;margin:0 0 9px}.muted{color:var(--muted);font-size:.9rem}.metric{font-size:1.7rem;font-weight:800;line-height:1.2}.metric small{font-size:.82rem;color:var(--muted);font-weight:600}.progress{height:8px;background:#e8edf5;border-radius:999px;overflow:hidden;margin-top:9px}.progress span{display:block;height:100%;background:var(--blue);width:0;transition:width .2s}.checklist{display:grid;gap:8px}.check{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;background:#f8fafc;border:1px solid #edf1f6;border-radius:10px}.check input{margin-top:5px;width:17px;height:17px;accent-color:#2563eb;flex:0 0 auto}.check span{flex:1}.check input:checked+span{text-decoration:line-through;color:#64748b}.tag{display:inline-block;font-size:.75rem;padding:3px 8px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-weight:700}.tag.green{background:#dcfce7;color:#166534}.tag.orange{background:#ffedd5;color:#9a3412}.tag.purple{background:#ede9fe;color:#5b21b6}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8fafc;font-weight:750}td:first-child{white-space:nowrap;font-weight:650}.day-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.day-tabs button{border:1px solid var(--line);border-radius:10px;background:white;padding:9px 13px;font-weight:700}.day-tabs button.active{background:var(--navy);color:white;border-color:var(--navy)}.day-panel{display:none}.day-panel.active{display:block}.pages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:10px 0}.pagebox{border:1px solid var(--line);border-radius:9px;padding:9px 4px;text-align:center;background:#f8fafc}.pagebox strong{display:block;font-size:1rem}.pagebox span{font-size:.73rem;color:var(--muted)}.subject-bar{display:flex;height:13px;border-radius:99px;overflow:hidden;margin:12px 0}.subject-bar span{display:block}.subject-row{display:grid;grid-template-columns:95px 1fr 60px;align-items:center;gap:8px;margin:10px 0}.subject-row .progress{margin:0}.field{display:grid;gap:5px;margin:9px 0}.field label{font-size:.86rem;font-weight:700}.field input,.field textarea,.field select{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:9px;background:white;color:var(--ink)}textarea{min-height:84px;resize:vertical}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.note{border-left:4px solid #60a5fa;background:#eff6ff;padding:12px 14px;border-radius:0 10px 10px 0;font-size:.92rem}.warning{border-left-color:#f59e0b;background:#fffbeb}.subject-card{border-top:4px solid var(--blue)}.subject-card.chem{border-top-color:#d97706}.subject-card.eng{border-top-color:#059669}.subject-card.bio{border-top-color:#7c3aed}.subject-card.jp{border-top-color:#db2777}.subject-card.geo{border-top-color:#0d9488}.subject-card.info{border-top-color:#64748b}.footer{text-align:center;color:var(--muted);padding:12px 18px 34px;font-size:.83rem}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#0f172a;color:white;border-radius:10px;padding:10px 15px;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
+@media(max-width:800px){.layout{grid-template-columns:1fr;padding:12px}.sidebar{position:static;display:flex;gap:3px;overflow-x:auto;white-space:nowrap;padding:7px}.sidebar a{flex:0 0 auto}.grid.three{grid-template-columns:1fr 1fr}.hero{padding:23px 16px}.pages{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:520px){.grid,.grid.three{grid-template-columns:1fr}.formrow{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.pages{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:13px}.hero-actions .btn{font-size:.88rem}}
+@media print{body{background:white}.hero{background:white;color:#111;border-bottom:2px solid #111}.hero p{color:#333}.sidebar,.hero-actions,.day-tabs,.no-print{display:none!important}.layout{display:block;max-width:none;padding:0}.card{box-shadow:none;break-inside:avoid}.section{break-inside:avoid}.day-panel{display:block!important}.footer{display:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="hero-inner">
+  <div class="eyebrow">STUDY DASHBOARD · 受験管理</div>
+  <h1>筑波大 生物学類<br>学習ダッシュボード</h1>
+  <p>日々の勉強計画・週次チェック・3日で60ページのルーズリーフ学習を一か所に。チェック状態と記録はこのブラウザに保存されます。</p>
+  <div class="hero-actions">
+   <button class="btn primary" onclick="window.print()">印刷 / PDF保存</button>
+   <button class="btn ghost" onclick="exportData()">進捗をバックアップ</button>
+   <button class="btn ghost" onclick="resetChecks()">チェックをリセット</button>
+  </div>
+ </div>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="ページ内メニュー">
+ <a href="#overview" class="active">概要</a><a href="#daily">毎日の計画</a><a href="#notebook">3日間ノート</a><a href="#weekly">週間チェック</a><a href="#subjects">科目別攻略</a><a href="#mock">模試・誤答分析</a><a href="#log">学習ログ</a>
+</nav>
+<main class="content">
+<section id="overview" class="section">
+ <div class="section-head"><div><h2>今日の概要</h2><p>完璧を狙うより、毎日「再現できる知識」を増やす。</p></div><span class="tag">目標：筑波大 生物学類</span></div>
+ <div class="grid three">
+  <div class="card"><div class="muted">今日のチェック</div><div class="metric"><span id="doneCount">0</span><small> / <span id="allCount">0</span></small></div><div class="progress"><span id="overallBar"></span></div></div>
+  <div class="card"><div class="muted">3日ノート進捗</div><div class="metric"><span id="pageDone">0</span><small> / 60ページ</small></div><div class="progress"><span id="pageBar"></span></div></div>
+  <div class="card"><div class="muted">今週の学習ログ</div><div class="metric"><span id="logCount">0</span><small> 件</small></div><div class="muted">学習ログ欄に記録すると増えます。</div></div>
+ </div>
+ <div class="note" style="margin-top:12px"><strong>使い方：</strong>チェック欄をタップして進捗を記録。ページ割りは目安です。問題を解き直して理解することを優先し、ページを埋めるためだけに書かない。</div>
+</section>
+
+<section id="daily" class="section">
+ <div class="section-head"><div><h2>毎日の勉強計画</h2><p>学校・駿台のある日で切り替えて使う。</p></div></div>
+ <div class="grid">
+  <div class="card">
+   <h3><span class="tag green">通常日</span> 約2時間20分</h3>
+   <div class="checklist" data-group="daily-normal">
+    <label class="check"><input type="checkbox"><span>数学 35分：基本問題を解き、間違いを分類する</span></label>
+    <label class="check"><input type="checkbox"><span>化学 35分：基本計算・典型問題を解く</span></label>
+    <label class="check"><input type="checkbox"><span>英語 30分：単語・文法・短い英文</span></label>
+    <label class="check"><input type="checkbox"><span>生物・国語など 20分：弱点か得意科目の維持</span></label>
+    <label class="check"><input type="checkbox"><span>解き直し・記録 20分：今日の誤答を翌日用に選ぶ</span></label>
+   </div>
+  </div>
+  <div class="card">
+   <h3><span class="tag orange">駿台・忙しい日</span> 約75分</h3>
+   <div class="checklist" data-group="daily-sundai">
+    <label class="check"><input type="checkbox"><span>英単語 15分：既習語の復習を含める</span></label>
+    <label class="check"><input type="checkbox"><span>授業の解き直し 20〜30分：解答を閉じて再現</span></label>
+    <label class="check"><input type="checkbox"><span>数学または化学 20分：弱点を1つだけ扱う</span></label>
+    <label class="check"><input type="checkbox"><span>明日の最優先タスクを1つ決める</span></label>
+   </div>
+   <p class="muted">授業が遅く終わった日は、授業復習と睡眠を優先。全部を無理に詰め込まない。</p>
+  </div>
+ </div>
+</section>
+
+<section id="notebook" class="section">
+ <div class="section-head"><div><h2>3日でルーズリーフ60ページ</h2><p>理解 → 再現 → テストの3日サイクル。</p></div><span class="tag purple">短期集中</span></div>
+ <div class="card">
+  <div class="day-tabs">
+   <button class="active" data-day="day1">1日目：理解</button>
+   <button data-day="day2">2日目：解き直し</button>
+   <button data-day="day3">3日目：確認テスト</button>
+  </div>
+  <div id="day1" class="day-panel active">
+   <h3>1日目｜1〜20ページ</h3><p class="muted">苦手の発見、正しい考え方の理解。明日の再テスト問題を選ぶ。</p>
+   <div class="pages"><div class="pagebox"><strong>1–5</strong><span>数学</span></div><div class="pagebox"><strong>6–10</strong><span>化学</span></div><div class="pagebox"><strong>11–14</strong><span>英語</span></div><div class="pagebox"><strong>15–16</strong><span>生物</span></div><div class="pagebox"><strong>17–18</strong><span>国語</span></div><div class="pagebox"><strong>19–20</strong><span>誤答・再テスト</span></div></div>
+   <div class="checklist" data-group="notebook-day1">
+    <label class="check"><input type="checkbox"><span>数学：基本問題4〜6題。解法の理由まで書いた</span></label>
+    <label class="check"><input type="checkbox"><span>化学：基本問題4〜6題。式・単位・計算の意味を確認</span></label>
+    <label class="check"><input type="checkbox"><span>英語：文法10〜15問＋単語の復習</span></label>
+    <label class="check"><input type="checkbox"><span>生物：考察・記述1〜2題を因果関係で説明</span></label>
+    <label class="check"><input type="checkbox"><span>国語：古文単語10〜15語＋文法または漢文句形</span></label>
+    <label class="check"><input type="checkbox"><span>明日の再テスト問題を5問以上選んだ</span></label>
+   </div>
+  </div>
+  <div id="day2" class="day-panel">
+   <h3>2日目｜21〜40ページ</h3><p class="muted">前日の誤答を解答なしで解き、必要に応じて類題へ。</p>
+   <div class="pages"><div class="pagebox"><strong>21–26</strong><span>数学</span></div><div class="pagebox"><strong>27–32</strong><span>化学</span></div><div class="pagebox"><strong>33–36</strong><span>英語</span></div><div class="pagebox"><strong>37–38</strong><span>生物</span></div><div class="pagebox"><strong>39</strong><span>国語</span></div><div class="pagebox"><strong>40</strong><span>誤答整理</span></div></div>
+   <div class="checklist" data-group="notebook-day2">
+    <label class="check"><input type="checkbox"><span>数学：前日の誤答を全問再挑戦＋類題2〜3題</span></label>
+    <label class="check"><input type="checkbox"><span>化学：前日の誤答を全問再挑戦＋類題2〜3題</span></label>
+    <label class="check"><input type="checkbox"><span>英語：文法15問程度を再テストし、根拠を説明</span></label>
+    <label class="check"><input type="checkbox"><span>生物：問題の現象・仕組みを白紙から説明</span></label>
+    <label class="check"><input type="checkbox"><span>国語：古典の確認テストをした</span></label>
+    <label class="check"><input type="checkbox"><span>解けない問題を特定し、3日目用に印をつけた</span></label>
+   </div>
+  </div>
+  <div id="day3" class="day-panel">
+   <h3>3日目｜41〜60ページ</h3><p class="muted">時間を測って確認テスト。残った弱点を次のサイクルへ。</p>
+   <div class="pages"><div class="pagebox"><strong>41–46</strong><span>数学</span></div><div class="pagebox"><strong>47–52</strong><span>化学</span></div><div class="pagebox"><strong>53–56</strong><span>英語</span></div><div class="pagebox"><strong>57–58</strong><span>生物</span></div><div class="pagebox"><strong>59</strong><span>国語・地理・情報</span></div><div class="pagebox"><strong>60</strong><span>総まとめ</span></div></div>
+   <div class="checklist" data-group="notebook-day3">
+    <label class="check"><input type="checkbox"><span>数学：確認テスト4〜6題を解答なしで解いた</span></label>
+    <label class="check"><input type="checkbox"><span>化学：確認テスト4〜6題。計算過程・単位も確認</span></label>
+    <label class="check"><input type="checkbox"><span>英語：文法15問程度＋短い英文読解1題</span></label>
+    <label class="check"><input type="checkbox"><span>生物：考察・記述1〜2題を確認</span></label>
+    <label class="check"><input type="checkbox"><span>残った弱点を最大5つ選び、次の3日間へ引き継ぐ</span></label>
+    <label class="check"><input type="checkbox"><span>睡眠を削らず、できたこと・次の課題を記録した</span></label>
+   </div>
+  </div>
+  <div class="formrow" style="margin-top:14px">
+   <div class="field"><label for="pagesInput">使ったページ数（0〜60）</label><input type="number" id="pagesInput" min="0" max="60" value="0"></div>
+   <div class="field"><label for="retakeRate">誤答の自力正答率（目安）</label><select id="retakeRate"><option value="">未確認</option><option>0〜39%</option><option>40〜59%</option><option>60〜79%</option><option>80〜100%</option></select></div>
+  </div>
+  <div class="field"><label for="carryOver">次の3日間に持ち越す弱点</label><textarea id="carryOver" placeholder="例：二次関数の最大最小、物質量の換算、英文法の準動詞…"></textarea></div>
+ </div>
+ <div class="grid" style="margin-top:12px">
+  <div class="card"><h3>1ページのテンプレート</h3><div class="checklist">
+   <label class="check"><input type="checkbox"><span>① 問題・単元を短く記録</span></label><label class="check"><input type="checkbox"><span>② 自分の間違いを特定</span></label><label class="check"><input type="checkbox"><span>③ 正しい考え方を自分の言葉で説明</span></label><label class="check"><input type="checkbox"><span>④ 解答を閉じて再挑戦／類題</span></label><label class="check"><input type="checkbox"><span>⑤ 次回の確認結果を記録</span></label>
+  </div></div>
+  <div class="card"><h3>ページ配分（合計60）</h3>
+   <div class="subject-row"><span>数学</span><div class="progress"><span style="width:100%;background:#4778c7"></span></div><strong>16 p</strong></div>
+   <div class="subject-row"><span>化学</span><div class="progress"><span style="width:100%;background:#d78b43"></span></div><strong>16 p</strong></div>
+   <div class="subject-row"><span>英語</span><div class="progress"><span style="width:75%;background:#4e9c83"></span></div><strong>12 p</strong></div>
+   <div class="subject-row"><span>生物</span><div class="progress"><span style="width:37.5%;background:#7d78c8"></span></div><strong>6 p</strong></div>
+   <div class="subject-row"><span>国語・地理・情報</span><div class="progress"><span style="width:37.5%;background:#9299a3"></span></div><strong>6 p</strong></div>
+  </div>
+ </div>
+</section>
+
+<section id="weekly" class="section">
+ <div class="section-head"><div><h2>週間チェックリスト</h2><p>毎週末に確認。未達は翌週に引き継ぎ、まとめて取り返そうとしない。</p></div></div>
+ <div class="grid">
+  <div class="card"><h3>英語</h3><div class="checklist" data-group="weekly-english">
+   <label class="check"><input type="checkbox"><span>単語：新出15〜20語/日を目安に、既習語も復習</span></label>
+   <label class="check"><input type="checkbox"><span>文法：間違えた問題を再テスト（正答率80％を目標）</span></label>
+   <label class="check"><input type="checkbox"><span>リスニング：10〜15分を週5回目安</span></label>
+   <label class="check"><input type="checkbox"><span>長文：駿台教材などを解き、根拠を確認</span></label>
+  </div></div>
+  <div class="card"><h3>数学</h3><div class="checklist" data-group="weekly-math">
+   <label class="check"><input type="checkbox"><span>数学IA：3回以上、基本問題を自力で解く</span></label>
+   <label class="check"><input type="checkbox"><span>数学IIBC：2回以上、学校教材中心に演習</span></label>
+   <label class="check"><input type="checkbox"><span>誤答を最低2題ずつ解き直す</span></label>
+   <label class="check"><input type="checkbox"><span>時間不足・方針不明・計算ミスを区別した</span></label>
+  </div></div>
+  <div class="card"><h3>化学</h3><div class="checklist" data-group="weekly-chem">
+   <label class="check"><input type="checkbox"><span>3回以上学習し、基本計算を練習</span></label>
+   <label class="check"><input type="checkbox"><span>物質量・濃度・気体などの基本を確認</span></label>
+   <label class="check"><input type="checkbox"><span>酸塩基・酸化還元・平衡の弱点を特定</span></label>
+   <label class="check"><input type="checkbox"><span>間違えた問題を解答なしで再挑戦</span></label>
+  </div></div>
+  <div class="card"><h3>国語</h3><div class="checklist" data-group="weekly-japanese">
+   <label class="check"><input type="checkbox"><span>古文単語を毎日少しずつ確認</span></label>
+   <label class="check"><input type="checkbox"><span>古典文法・漢文句形を週3回以上</span></label>
+   <label class="check"><input type="checkbox"><span>古文・漢文の読解を週2回目安</span></label>
+  </div></div>
+  <div class="card"><h3>生物</h3><div class="checklist" data-group="weekly-biology">
+   <label class="check"><input type="checkbox"><span>週3回を目安にセミナー・標準問題を演習</span></label>
+   <label class="check"><input type="checkbox"><span>考察・実験データ問題を1題以上</span></label>
+   <label class="check"><input type="checkbox"><span>記述を因果関係で説明し、丸暗記で終わらせない</span></label>
+  </div></div>
+  <div class="card"><h3>地理・情報</h3><div class="checklist" data-group="weekly-other">
+   <label class="check"><input type="checkbox"><span>地理：資料・地図・統計と誤答を週2回確認</span></label>
+   <label class="check"><input type="checkbox"><span>情報I：共通テスト形式の問題を週1〜2回</span></label>
+   <label class="check"><input type="checkbox"><span>週末に進捗を振り返り、翌週の重点を決める</span></label>
+  </div></div>
+ </div>
+</section>
+
+<section id="subjects" class="section">
+ <div class="section-head"><div><h2>科目別攻略メモ</h2><p>教材を増やしすぎず、主教材を決めて反復する。</p></div></div>
+ <div class="grid">
+  <div class="card subject-card eng"><h3>英語 <span class="tag green">基礎から</span></h3>
+   <p>主軸：英文法ポラリス1。単語・文法・読解・リスニングを小分けに継続。</p>
+   <ul><li>システム英単語：既習語の復習＋新出15〜20語を目安</li><li>Vintage：間違えた分野の補助・確認に使う</li><li>文法は「正解の根拠」を言葉にする</li><li>リスニング10〜15分を週5回目安</li></ul>
+  </div>
+  <div class="card subject-card"><h3>数学 <span class="tag">IAを優先</span></h3>
+   <p>IAは基礎問題精講を軸に、IIBCは学校のNEW ACTION / LEGENDなどを活用。</p>
+   <ul><li>青チャートは辞書・解法確認として使う</li><li>解けなかった問題は日を空けて再挑戦</li><li>「方針が立たない」「公式忘れ」「計算」「時間」を分けて記録</li><li>数学IIIは基礎が安定してから週1〜2回を検討</li></ul>
+  </div>
+  <div class="card subject-card chem"><h3>化学 <span class="tag orange">最優先の弱点</span></h3>
+   <p>説明教材1冊＋問題集1冊を軸にして、基礎計算を固める。</p>
+   <ul><li>物質量・化学反応式・濃度・気体</li><li>酸塩基・酸化還元・化学平衡</li><li>式を暗記するだけでなく、量の関係を説明</li><li>宇宙一わかりやすい理論化学／岡野などから主教材を選ぶ</li></ul>
+  </div>
+  <div class="card subject-card bio"><h3>生物 <span class="tag purple">得意を維持</span></h3>
+   <p>セミナー生物＋標準問題精講を中心に、考察・データ読解も継続。</p>
+   <ul><li>週3回を目安に演習</li><li>考察問題では根拠となるデータを指摘</li><li>記述は原因→仕組み→結果の順で整理</li><li>研究・シミュレーションの探究心も大切にしつつ、入試演習を優先</li></ul>
+  </div>
+  <div class="card subject-card jp"><h3>国語 <span class="tag">古典の基礎</span></h3>
+   <ul><li>古文単語315などで毎日少しずつ復習</li><li>古典文法・漢文句形を短時間で反復</li><li>読解は根拠となる語句・文を確認</li><li>週ごとに古文・漢文の演習を入れる</li></ul>
+  </div>
+  <div class="card subject-card geo"><h3>地理</h3>
+   <ul><li>強みを維持し、統計・地図・資料問題を確認</li><li>誤答の理由を資料の読み違い／知識不足に分類</li><li>週2回、短時間でも継続</li></ul>
+  </div>
+  <div class="card subject-card info"><h3>情報I</h3>
+   <ul><li>共通テスト形式とプログラム読解を練習</li><li>誤答した用語・アルゴリズムをまとめ直す</li><li>IT資格の勉強だけで代用せず、入試形式で確認</li></ul>
+  </div>
+ </div>
+</section>
+
+<section id="mock" class="section">
+ <div class="section-head"><div><h2>模試・誤答分析</h2><p>点数だけで判断せず、失点の原因を次の行動に変換する。</p></div></div>
+ <div class="card">
+  <h3>誤答を分類する</h3>
+  <div class="checklist" data-group="mock-errors">
+   <label class="check"><input type="checkbox"><span><strong>知識不足：</strong>用語・公式・文法を知らなかった</span></label>
+   <label class="check"><input type="checkbox"><span><strong>方針不足：</strong>何から始めるか分からなかった</span></label>
+   <label class="check"><input type="checkbox"><span><strong>計算・処理：</strong>式は合っていたが計算などで失点</span></label>
+   <label class="check"><input type="checkbox"><span><strong>読解・条件：</strong>設問・資料・条件を読み違えた</span></label>
+   <label class="check"><input type="checkbox"><span><strong>時間配分：</strong>時間不足、難問に固執した</span></label>
+   <label class="check"><input type="checkbox"><span><strong>再テスト：</strong>数日後に解答を見ずに再挑戦した</span></label>
+  </div>
+  <div class="formrow" style="margin-top:12px">
+   <div class="field"><label for="mockSubject">科目</label><select id="mockSubject"><option>英語</option><option>数学IA</option><option>数学IIBC</option><option>化学</option><option>生物</option><option>国語</option><option>地理</option><option>情報I</option></select></div>
+   <div class="field"><label for="mockType">主な原因</label><select id="mockType"><option>知識不足</option><option>方針不足</option><option>計算・処理</option><option>読解・条件</option><option>時間配分</option></select></div>
+  </div>
+  <div class="field"><label for="mockProblem">問題・単元</label><input id="mockProblem" placeholder="例：二次関数の最大最小、物質量の計算"></div>
+  <div class="field"><label for="mockAction">次の具体的な行動</label><textarea id="mockAction" placeholder="例：基礎問題精講の該当例題を解き直し、明後日に再テスト"></textarea></div>
+  <button class="btn" onclick="addMock()">誤答メモを追加</button>
+  <div id="mockList" style="margin-top:12px"></div>
+ </div>
+ <div class="note warning" style="margin-top:12px"><strong>受験校の判断：</strong>1回の模試だけで志望校を決めない。共通テスト・二次試験の配点、過去問の相性、今後の伸びを材料に、筑波大と岡山大などの選択肢を現実的に比較する。</div>
+</section>
+
+<section id="log" class="section">
+ <div class="section-head"><div><h2>学習ログ</h2><p>短く記録して、続けられた事実を積み上げる。</p></div></div>
+ <div class="card">
+  <div class="formrow">
+   <div class="field"><label for="logDate">日付</label><input type="date" id="logDate"></div>
+   <div class="field"><label for="logSubject">科目</label><select id="logSubject"><option>英語</option><option>数学</option><option>化学</option><option>生物</option><option>国語</option><option>地理</option><option>情報I</option><option>駿台の授業復習</option></select></div>
+  </div>
+  <div class="formrow">
+   <div class="field"><label for="logMinutes">学習時間（分）</label><input type="number" id="logMinutes" min="0" max="1440" placeholder="例：35"></div>
+   <div class="field"><label for="logOutcome">成果（ひとこと）</label><input id="logOutcome" placeholder="例：濃度計算を3題解き直した"></div>
+  </div>
+  <button class="btn" onclick="addLog()">学習ログを保存</button>
+  <div id="logList" style="margin-top:14px"></div>
+ </div>
+</section>
+</main>
+</div>
+<footer class="footer">学習の進捗はこのブラウザ内に保存されます。ブラウザのデータ消去・端末変更に備えて、ときどきバックアップしてください。</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const STORE='tsukuba_biology_dashboard_v1';
+let state={checks:{},pages:0,rate:'',carry:'',logs:[],mocks:[]};
+function load(){try{const saved=JSON.parse(localStorage.getItem(STORE)||'{}');state={...state,...saved};}catch(e){}}
+function save(){localStorage.setItem(STORE,JSON.stringify(state));updateStats();}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1900);}
+function keyFor(el){const group=el.closest('[data-group]')?.dataset.group||'template';const inputs=[...document.querySelectorAll(`[data-group="${group}"] input[type="checkbox"]`)];return group+'-'+inputs.indexOf(el);}
+function bindChecks(){document.querySelectorAll('.check input[type="checkbox"]').forEach((el,i)=>{el.dataset.key=keyFor(el);el.checked=!!state.checks[el.dataset.key];el.addEventListener('change',()=>{state.checks[el.dataset.key]=el.checked;save();});});}
+function updateStats(){const boxes=[...document.querySelectorAll('.check input[type="checkbox"]')];let done=boxes.filter(b=>state.checks[b.dataset.key]).length;document.getElementById('doneCount').textContent=done;document.getElementById('allCount').textContent=boxes.length;document.getElementById('overallBar').style.width=(boxes.length?done/boxes.length*100:0)+'%';document.getElementById('pageDone').textContent=state.pages||0;document.getElementById('pageBar').style.width=Math.min(100,(state.pages||0)/60*100)+'%';document.getElementById('logCount').textContent=state.logs.length;}
+document.querySelectorAll('.day-tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.day-tabs button').forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.day-panel').forEach(p=>p.classList.toggle('active',p.id===btn.dataset.day));}));
+document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.sidebar a').forEach(x=>x.classList.toggle('active',x===a));}));
+function renderLogs(){const el=document.getElementById('logList');if(!state.logs.length){el.innerHTML='<p class="muted">まだ学習ログはありません。</p>';return;}el.innerHTML='<div class="table-wrap"><table><thead><tr><th>日付</th><th>科目</th><th>分</th><th>成果</th><th></th></tr></thead><tbody>'+state.logs.map((l,i)=>`<tr><td>${esc(l.date)}</td><td>${esc(l.subject)}</td><td>${Number(l.minutes)||0}</td><td>${esc(l.outcome)}</td><td><button class="btn" onclick="deleteLog(${i})">削除</button></td></tr>`).join('')+'</tbody></table></div>';}
+function addLog(){const date=document.getElementById('logDate').value||new Date().toISOString().slice(0,10);const subject=document.getElementById('logSubject').value;const minutes=document.getElementById('logMinutes').value;const outcome=document.getElementById('logOutcome').value.trim();if(!minutes&&!outcome){toast('学習時間か成果を入力してね');return;}state.logs.unshift({date,subject,minutes:Number(minutes)||0,outcome});save();renderLogs();document.getElementById('logMinutes').value='';document.getElementById('logOutcome').value='';toast('学習ログを保存しました');}
+function deleteLog(i){state.logs.splice(i,1);save();renderLogs();}
+function addMock(){const subject=document.getElementById('mockSubject').value,type=document.getElementById('mockType').value,problem=document.getElementById('mockProblem').value.trim(),action=document.getElementById('mockAction').value.trim();if(!problem&&!action){toast('問題・単元か次の行動を入力してね');return;}state.mocks.unshift({subject,type,problem,action,date:new Date().toLocaleDateString('ja-JP')});save();renderMocks();document.getElementById('mockProblem').value='';document.getElementById('mockAction').value='';toast('誤答メモを保存しました');}
+function renderMocks(){const el=document.getElementById('mockList');if(!state.mocks.length){el.innerHTML='<p class="muted">まだ誤答メモはありません。</p>';return;}el.innerHTML=state.mocks.map((m,i)=>`<div class="check" style="margin-bottom:8px;display:block"><div><span class="tag">${esc(m.subject)}</span> <span class="tag orange">${esc(m.type)}</span> <span class="muted">${esc(m.date)}</span></div><strong>${esc(m.problem||'問題名未入力')}</strong><div>${esc(m.action||'次の行動未入力')}</div><button class="btn" style="margin-top:6px" onclick="deleteMock(${i})">削除</button></div>`).join('');}
+function deleteMock(i){state.mocks.splice(i,1);save();renderMocks();}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function resetChecks(){if(!confirm('チェック状態・3日ノートの入力値をリセットします。学習ログと誤答メモは残します。よろしいですか？'))return;state.checks={};state.pages=0;state.rate='';state.carry='';document.querySelectorAll('.check input').forEach(el=>el.checked=false);document.getElementById('pagesInput').value=0;document.getElementById('retakeRate').value='';document.getElementById('carryOver').value='';save();toast('チェックをリセットしました');}
+function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='study-dashboard-backup.json';a.click();URL.revokeObjectURL(url);toast('バックアップファイルを作成しました');}
+function init(){load();bindChecks();document.getElementById('pagesInput').value=state.pages||0;document.getElementById('retakeRate').value=state.rate||'';document.getElementById('carryOver').value=state.carry||'';document.getElementById('pagesInput').addEventListener('input',e=>{state.pages=Math.max(0,Math.min(60,Number(e.target.value)||0));save();});document.getElementById('retakeRate').addEventListener('change',e=>{state.rate=e.target.value;save();});document.getElementById('carryOver').addEventListener('input',e=>{state.carry=e.target.value;save();});document.getElementById('logDate').value=new Date().toISOString().slice(0,10);renderLogs();renderMocks();updateStats();}
+init();
+</script>
+</body>
+</html>
